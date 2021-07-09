@@ -43,11 +43,6 @@
  */
 #define ANYSIZE_NOBAR_PATCH 1
 
-/* A simple variant of the anysize patch that only changes the resize hints to allow the window to
- * be resized to any size.
- */
-#define ANYSIZE_SIMPLE_PATCH 0
-
 /* This patch allows the use of a blinking cursor.
  * Only cursor styles 0, 1, 3, 5, and 7 blink. Set cursorstyle accordingly.
  * Cursor styles are defined here:
@@ -73,15 +68,6 @@
  */
 #define CLIPBOARD_PATCH 1
 
-/* This patch allows st to be resized without cutting off text when the terminal window is
- * made larger again. Text does not wrap when the terminal window is made smaller.
- *
- * The vim browse patch takes precedence over this patch.
- *
- * https://github.com/bakkeby/st-flexipatch/issues/34
- */
-#define COLUMNS_PATCH 0
-
 /* Select and copy the last URL displayed with Mod+l. Multiple invocations cycle through the
  * available URLs.
  * https://st.suckless.org/patches/copyurl/
@@ -93,12 +79,6 @@
  * https://st.suckless.org/patches/copyurl/
  */
 #define COPYURL_HIGHLIGHT_SELECTED_URLS_PATCH 0
-
-/* This patch adds support for CSI escape sequences 22 and 23, which save and
- * restores the window title (for instance nvim does this when opening and closing).
- * https://st.suckless.org/patches/csi_22_23/
- */
-#define CSI_22_23_PATCH 0
 
 /* According to the specification (see link in BLINKING_CURSOR_PATCH) the "Set cursor style
  * (DECSCUSR), VT520." escape sequences define both values of 0 and 1 as a blinking block,
@@ -294,6 +274,7 @@
 /* This patch adds SIXEL graphics support for st.
  * Note that patch/sixel.c/sixel_hls.c come from mintty, licensed under GPL.
  * Known issues:
+ *    - Entering clear causes all sixels to be deleted from scrollback.
  *    - Rendering sixel graphics may cause unusual cursor placement, this is
  *      not specific to this variant of st - the same issue is present in
  *      the xterm implementation. This is likely an issue of sixel height
@@ -304,11 +285,11 @@
  *      A pull request or instructions for how to properly add alpha support for
  *      sixel graphics would be very welcome.
  *
- * Note that you need to uncomment the corresponding lines in config.mk when including this patch.
+ * Note that you need to uncomment the corresponding lines in Makefile when including this patch.
  *
  * https://gist.github.com/saitoha/70e0fdf22e3e8f63ce937c7f7da71809
  */
-#define SIXEL_PATCH 1
+#define SIXEL_PATCH 0
 
 /* This patch allows clients to embed into the st window and is useful if you tend to
  * start X applications from the terminal. For example:

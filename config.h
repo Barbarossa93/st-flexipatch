@@ -9,7 +9,7 @@ static char *font = "-xos4-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-*";
 #if FONT2_PATCH
 /* Spare fonts */
 static char *font2[] = {
-	"CozetteVector:pixelsize=12:antialias=false:autohint=true",
+	"CozetteVector:pixelsize=11.8:antialias=false:autohint=true",
 	"Twemoji:pixelsize=12:antialias=true:autohint=true",
 	"Hack Nerd Font Mono:pixelsize=12:antialias=true:autohint=true",
 	"Kochi Gothic:pixelsize=14:antialias=true:autohint=true",
@@ -720,29 +720,3 @@ static char ascii_printable[] =
  */
 static char *plumb_cmd = "plumb";
 #endif // RIGHTCLICKTOPLUMB_PATCH
-
-#if UNDERCURL_PATCH
-/**
- * Undercurl style. Set UNDERCURL_STYLE to one of the available styles.
- *
- * Curly: Dunno how to draw it *shrug*
- *  _   _   _   _
- * ( ) ( ) ( ) ( )
- *	 (_) (_) (_) (_)
- *
- * Spiky:
- * /\  /\   /\	/\
- *   \/  \/	  \/
- *
- * Capped:
- *	_     _     _
- * / \   / \   / \
- *    \_/   \_/
- */
-// Available styles
-#define UNDERCURL_CURLY 0
-#define UNDERCURL_SPIKY 1
-#define UNDERCURL_CAPPED 2
-// Active style
-#define UNDERCURL_STYLE UNDERCURL_SPIKY
-#endif // UNDERCURL_PATCH
