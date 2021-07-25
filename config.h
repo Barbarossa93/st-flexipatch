@@ -5,13 +5,14 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "-xos4-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-*";
+//static char *font = "-xos4-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-*";
+static char *font = "UW Ttyp0:pixelsize=16:antialias=false:autohint=true";
 #if FONT2_PATCH
 /* Spare fonts */
 static char *font2[] = {
 	"CozetteVector:pixelsize=11.8:antialias=false:autohint=true",
 	"Twemoji:pixelsize=12:antialias=true:autohint=true",
-	"Hack Nerd Font Mono:pixelsize=12:antialias=true:autohint=true",
+	//"Hack Nerd Font Mono:pixelsize=12:antialias=true:autohint=true",
 	"Kochi Gothic:pixelsize=14:antialias=true:autohint=true",
 	"Unifont:pixelsize=12:antialias=true:autohint=true",
 };
