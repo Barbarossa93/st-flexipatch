@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 //static char *font = "-xos4-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-*";
-static char *font = "CtrlD:pixelsize=16:antialias=false:autohint=true";
+static char *font = "-ctrld-fixed-medium-r-normal-*-16-*-*-*-*-*-iso10646-*";
 #if FONT2_PATCH
 /* Spare fonts */
 static char *font2[] = {
