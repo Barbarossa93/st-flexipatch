@@ -6,12 +6,12 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 //static char *font = "-xos4-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-*";
-static char *font = "Misc Termsynu:pixelsize=14:antialias=false:autohint=true";
+static char *font = "Misc Termsyn:pixelsize=14:antialias=false:autohint=true";
 #if FONT2_PATCH
 /* Spare fonts */
 static char *font2[] = {
 	"CozetteVector:pixelsize=11.8:antialias=false:autohint=true",
-	"Twemoji:pixelsize=12:antialias=true:autohint=true",
+	"Symbola:pixelsize=12:antialias=true:autohint=true",
 	//"Hack Nerd Font Mono:pixelsize=12:antialias=true:autohint=true",
 	"Kochi Gothic:pixelsize=14:antialias=true:autohint=true",
 	"Unifont:pixelsize=12:antialias=true:autohint=true",
@@ -379,7 +379,7 @@ static MouseShortcut maltshortcuts[] = {
 
 #if EXTERNALPIPE_PATCH // example command
 static char *openurlcmd[] = { "/bin/sh", "-c",
-	"xurls | ddmenu -p Urls: -w $WINDOWID | xargs -r open",
+	"xurls | ddmenu -p Urls: -w $WINDOWID | xargs -r linkhandler",
 	"externalpipe", NULL };
 #endif // EXTERNALPIPE_PATCH
 

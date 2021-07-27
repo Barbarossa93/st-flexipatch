@@ -133,7 +133,7 @@
 /* Reading and writing st's screen through a pipe, e.g. pass info to dmenu.
  * https://st.suckless.org/patches/externalpipe/
  */
-#define EXTERNALPIPE_PATCH 0
+#define EXTERNALPIPE_PATCH 1
 
 /* This patch improves and extends the externalpipe patch in two ways:
  *    - it prevents the reset of the signal handler set on SIGCHILD, when
@@ -151,7 +151,7 @@
  * https://github.com/sos4nt/dynamic-colors
  * https://lists.suckless.org/hackers/2004/17218.html
  */
-#define EXTERNALPIPEIN_PATCH 0
+#define EXTERNALPIPEIN_PATCH 1
 
 /* This patch allows command line applications to use all the fancy key combinations
  * that are available to GUI applications.
@@ -234,7 +234,7 @@
  *
  * https://www.reddit.com/r/suckless/comments/cc83om/st_open_url/
  */
-#define OPENURLONCLICK_PATCH 1
+#define OPENURLONCLICK_PATCH 0
 
 /* This patch adds support for OSC escape sequences 10, 11 and 12 that modify the background,
  * foreground and cursor colors in the way they are implemented in most other terminals
