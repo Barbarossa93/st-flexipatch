@@ -379,7 +379,7 @@ static MouseShortcut maltshortcuts[] = {
 
 #if EXTERNALPIPE_PATCH // example command
 static char *openurlcmd[] = { "/bin/sh", "-c",
-	"xurls | ddmenu -p Urls: | xargs -r linkhandler",
+	"link_grabber.sh",
 	"externalpipe", NULL };
 #endif // EXTERNALPIPE_PATCH
 
