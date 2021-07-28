@@ -13,8 +13,8 @@ static char *font2[] = {
 	"CozetteVector:pixelsize=11.8:antialias=false:autohint=true",
 	"Symbola:pixelsize=12:antialias=true:autohint=true",
 	//"Hack Nerd Font Mono:pixelsize=12:antialias=true:autohint=true",
-	"Kochi Gothic:pixelsize=14:antialias=true:autohint=true",
-	"Unifont:pixelsize=12:antialias=true:autohint=true",
+	"Kochi Gothic:pixelsize=14:antialias=false:autohint=true",
+	"Unifont:pixelsize=12:antialias=false:autohint=true",
 };
 #endif // FONT2_PATCH
 
