@@ -21,7 +21,7 @@ static char *font2[] = {
 #if RELATIVEBORDER_PATCH
 /* borderperc: percentage of cell width to use as a border
  *             0 = no border, 100 = border width is same as cell width */
-int borderperc = 21;
+int borderperc = 20;
 #else
 static int borderpx = 36;
 #endif // RELATIVEBORDER_PATCH
