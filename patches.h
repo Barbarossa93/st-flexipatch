@@ -32,7 +32,7 @@
 /* This patch allows st to reize to any pixel size rather than snapping to character width/height.
  * https://st.suckless.org/patches/anysize/
  */
-#define ANYSIZE_PATCH 1
+#define ANYSIZE_PATCH 0
 
 /* This patch aims to prevent black bars being drawn on the edges of st terminals using the anysize
  * patch. This generally only occurs when the terminal background color doesn't match the colors
@@ -41,7 +41,12 @@
  * terminal resizes.)
  * https://github.com/connor-brooks/st-anysize-nobar
  */
-#define ANYSIZE_NOBAR_PATCH 1
+#define ANYSIZE_NOBAR_PATCH 0
+
+/* A simple variant of the anysize patch that only changes the resize hints to allow the window to
+ * be resized to any size.
+ */
+#define ANYSIZE_SIMPLE_PATCH 1
 
 /* This patch allows the use of a blinking cursor.
  * Only cursor styles 0, 1, 3, 5, and 7 blink. Set cursorstyle accordingly.
