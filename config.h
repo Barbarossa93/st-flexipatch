@@ -395,8 +395,10 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_C,           clipcopy,        {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,       {.i =  0} },
 	#if SCROLLBACK_PATCH
-	{ ShiftMask,            XK_Page_Up,     kscrollup,       {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,     {.i = -1} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,       {.i = 1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,     {.i = 1} },
+	{ XK_ANY_MOD,            XK_Page_Up,     kscrollup,       {.i = -1} },
+	{ XK_ANY_MOD,            XK_Page_Down,   kscrolldown,     {.i = -1} },
 	#endif // SCROLLBACK_PATCH
 	#if CLIPBOARD_PATCH
 	{ TERMMOD,              XK_Y,           clippaste,       {.i =  0} },
