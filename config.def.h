@@ -5,15 +5,16 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "-xos4-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-*";
+//static char *font = "-xos4-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-*";
+static char *font = "Termsyn:pixelsize=14:antialias=false:autohint=true";
 #if FONT2_PATCH
 /* Spare fonts */
 static char *font2[] = {
-	"CozetteVector:pixelsize=12:antialias=false:autohint=true",
-	"Twemoji:pixelsize=12:antialias=true:autohint=true",
-	"Hack Nerd Font Mono:pixelsize=12:antialias=true:autohint=true",
-	"Kochi Gothic:pixelsize=14:antialias=true:autohint=true",
-	"Unifont:pixelsize=12:antialias=true:autohint=true",
+	"CozetteVector:pixelsize=11.8:antialias=false:autohint=true",
+	"Symbola:pixelsize=12:antialias=true:autohint=true",
+	//"Hack Nerd Font Mono:pixelsize=12:antialias=true:autohint=true",
+	"Kochi Gothic:pixelsize=14:antialias=false:autohint=true",
+	"Unifont:pixelsize=12:antialias=false:autohint=true",
 };
 #endif // FONT2_PATCH
 
@@ -230,7 +231,7 @@ Glyph style[] = {{' ',ATTR_ITALIC|ATTR_FAINT,15,16}, {' ',ATTR_ITALIC,232,11},
  * 7: Blinking st cursor
  * 8: Steady st cursor
  */
-static unsigned int cursorstyle = 3;
+static unsigned int cursorstyle = 1;
 static Rune stcursor = 0x2603; /* snowman (U+2603) */
 #else
 /*
@@ -378,7 +379,7 @@ static MouseShortcut maltshortcuts[] = {
 
 #if EXTERNALPIPE_PATCH // example command
 static char *openurlcmd[] = { "/bin/sh", "-c",
-	"xurls | ddmenu -p Urls: -w $WINDOWID | xargs -r open",
+	"link_grabber.sh",
 	"externalpipe", NULL };
 #endif // EXTERNALPIPE_PATCH
 
@@ -388,14 +389,16 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,   {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,     {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,        {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,            {.f = +2} },
-	{ TERMMOD,              XK_Next,        zoom,            {.f = -2} },
+	{ ControlMask,              XK_Prior,       zoom,            {.f = +1} },
+	{ ControlMask,              XK_Next,        zoom,            {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,       {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,        {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,       {.i =  0} },
 	#if SCROLLBACK_PATCH
 	{ ShiftMask,            XK_Page_Up,     kscrollup,       {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,     {.i = -1} },
+	{ TERMMOD,            XK_Page_Up,     kscrollup,       {.i = 1} },
+	{ TERMMOD,            XK_Page_Down,   kscrolldown,     {.i = 1} },
 	#endif // SCROLLBACK_PATCH
 	#if CLIPBOARD_PATCH
 	{ TERMMOD,              XK_Y,           clippaste,       {.i =  0} },
@@ -744,5 +747,6 @@ static char *plumb_cmd = "plumb";
 #define UNDERCURL_SPIKY 1
 #define UNDERCURL_CAPPED 2
 // Active style
-#define UNDERCURL_STYLE UNDERCURL_SPIKY
+#define UNDERCURL_STYLE UNDERCURL_CAPPED
 #endif // UNDERCURL_PATCH
+
