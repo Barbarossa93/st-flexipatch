@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 //static char *font = "-xos4-terminus-medium-*-normal-*-14-*-*-*-*-*-iso10646-*";
-static char *font = "creep2:pixelsize=11:antialias=false:autohint=true";
+static char *font = "creep2:pixelsize=11:style=Medium:antialias=false:autohint=true";
 #if FONT2_PATCH
 /* Spare fonts */
 static char *font2[] = {
